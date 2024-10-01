@@ -23,7 +23,7 @@ export default async function Home({}) {
           <div key={slug} className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-lg">
             <Link href={`/${slug}`}>
               <Image width={650} height={340} alt={title} src={`${image}`} />
-              <h2 className="p-4 font-bold">{title}</h2>
+              <h2 className="p-4 font-bold ">{title}</h2>
             </Link>
           </div>
         ))}
