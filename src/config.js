@@ -1,10 +1,10 @@
 module.exports.SITE = {
-  name: 'TailNext',
+  name: 'Народна Думка',
 
-  origin: 'https://tailnext.vercel.app',
+  origin: 'https://narodnadumka.vercel.app/',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'TailNext — Your website with Next.js + Tailwind CSS',
-  description: 'TailNext is a free and ready to start template to make your website using Next.js and Tailwind CSS.',
+  title: 'Народна Думка - Городок',
+  description: 'Народна Думка - сайт твоїх місцевиї новин',
 };
