@@ -41,22 +41,10 @@ import gasImg from '~/assets/images/gas.jpg';
 export const heroHome: HeroProps = {
   title: (
     <>
-      Free template for <span className="hidden md:inline">starts a website using</span> <span>Next.js</span> +{' '}
-      <span className="sm:whitespace-nowrap">Tailwind CSS</span>
+      Народна думка - <span className="hidden md:inline"> це новини твого міста</span>
     </>
   ),
-  subtitle: (
-    <>
-      <span className="hidden md:inline">
-        <span className="font-semibold underline decoration-primary-600 decoration-wavy decoration-1 underline-offset-2">
-          TailNext
-        </span>{' '}
-        is a production ready template to start your new website using <em>Next.js</em> + <em>Tailwind CSS</em>.
-      </span>{' '}
-      It has been designed following Best Practices, SEO, Accessibility, Dark Mode, great Page Speed, image
-      optimization.
-    </>
-  ),
+  subtitle: <></>,
   callToAction: {
     text: 'Get template',
     href: 'https://github.com/onwidget/tailnext',
@@ -185,29 +173,12 @@ export const contentHomeOne: ContentProps = {
   id: 'contentOne-on-home-one',
   hasBackground: true,
   header: {
-    title: 'Aliquip definiebas ad est',
-    subtitle: 'Quando cetero his ne, eum admodum sapientem ut',
-    tagline: 'Content',
+    title: 'Останні події',
+    subtitle: 'Важливо бути вкурсі',
+    tagline: '',
   },
   content:
-    'Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.',
-  items: [
-    {
-      title: 'Per ei quaeque sensibus',
-      description:
-        'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
-    },
-    {
-      title: 'Cu imperdiet posidonium sed',
-      description:
-        'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
-    },
-    {
-      title: 'Nulla omittam sadipscing mel ne',
-      description:
-        'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
-    },
-  ],
+    '💛💙Посвята в козачата💛💙 \n З нагоди Дня захисників та захисниць України, та Дня українського козацтва у Керницькому  НВК І-ІІІ ст.  відбувся захід  "Посвята в козачата" для учнів 2 класу.В ході свята другокласники декламували вірші, виконували пісні про козаків,а також змагалися між собою.  Вони присягнули на вірність Україні, вступаючи до лав козацтва, перед обличчям своїх друзів, перед рідною землею та були нагороджені почесними медалями.',
   image: {
     src: cameraFrontImg,
     alt: 'Colorful Image',
@@ -220,28 +191,13 @@ export const contentHomeOne: ContentProps = {
 export const contentHomeTwo: ContentProps = {
   id: 'contentOne-on-home-two',
   hasBackground: true,
-  content:
-    'Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nib dissentias, mei exerci tamquam euripidis cu.',
-  items: [
-    {
-      title: 'Per ei quaeque sensibus',
-    },
-    {
-      title: 'Cu imperdiet posidonium sed',
-    },
-    {
-      title: 'Nulla omittam sadipscing mel ne',
-    },
-    {
-      title: 'Per ei quaeque sensibus',
-    },
-    {
-      title: 'Cu imperdiet posidonium sed',
-    },
-    {
-      title: 'Nulla omittam sadipscing mel ne',
-    },
-  ],
+  content: `Відкрито пам'ятну дошку Герою - Назару Подібці.
+Сьогодні в Новосільській гімназії з дошкільним підрозділом імені Назара Подібки відкрили меморіальну пам'ятну дошку Герою, випускнику закладу.
+Назар Подібка - командир штурмової групи 5-ої окремої штурмової бригади батальйону "Айдар".
+Символічно, що відкриття відбулося в свято Покрови Пресвятої Богородиці та День Захисників та Захисниць України.
+Вшановуємо Героїв - пам'ятаємо!!!
+Слава Україні!!! Героям Слава!!!`,
+  items: [],
   image: {
     src: cameraBackImg,
     alt: 'Colorful Image',
@@ -607,53 +563,52 @@ export const teamHome: TeamProps = {
 export const contactHome: ContactProps = {
   hasBackground: true,
   header: {
-    title: 'Get in Touch',
-    subtitle: 'In hac habitasse platea dictumst',
+    title: 'Звязатися з нами',
+    subtitle: 'Це можна зробити просто і легко',
     tagline: 'Contact',
   },
-  content:
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut scelerisque sagittis ante, ac tincidunt sem venenatis ut.',
+  content: 'Ви можете звернутись до нас з приводу будь-якого питання: новини, роботи, тощо',
   items: [
     {
-      title: 'Our Address',
-      description: ['1230 Maecenas Street Donec Road', 'New York, EEUU'],
+      title: 'Наша адреса',
+      description: ['вул. Т.Шевченка 12', 'Городок, Львівська обл.'],
       icon: IconMapPin,
     },
     {
-      title: 'Contact',
-      description: ['Mobile: +1 (123) 456-7890', 'Mail: tailnext@gmail.com'],
+      title: 'Контактні дані',
+      description: ['Телефон: +38 (099) 99-9999', 'Електронна пошта: narodnadumka@ukr.net'],
       icon: IconPhoneCall,
     },
     {
-      title: 'Working hours',
-      description: ['Monday - Friday: 08:00 - 17:00', 'Saturday & Sunday: 08:00 - 12:00'],
+      title: 'Робочі години',
+      description: ['Понеділок - Пятниця: 08:00 - 17:00', 'Субота та Неділя: 08:00 - 12:00'],
       icon: IconClock,
     },
   ],
   form: {
-    title: 'Ready to Get Started?',
+    title: 'Заповніть форму для запитання',
     inputs: [
       {
         type: 'text',
         name: 'name',
         autocomplete: 'off',
-        placeholder: 'Your name',
+        placeholder: 'Ваше імя',
       },
       {
         type: 'email',
         name: 'email',
         autocomplete: 'on',
-        placeholder: 'Your email address',
+        placeholder: 'Електронна пошта',
       },
     ],
     textarea: {
       cols: 30,
       rows: 5,
       name: 'textarea',
-      placeholder: 'Write your message...',
+      placeholder: 'Опишіть ваше запитання',
     },
     btn: {
-      title: 'Send Message',
+      title: 'Надіслати',
       type: 'submit',
     },
   },

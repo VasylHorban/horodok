@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <>
-      <Hero2 {...hero2About} />
+      {/* <Hero2 {...hero2About} />
       <Stats {...statsAbout} />
       <Features4 {...featuresFourAbout} />
       <Features4 {...featuresFourAboutTwo} />
@@ -41,7 +41,8 @@ const Page = () => {
       <Team2 {...teamAbout} />
       <Testimonials2 {...testimonials2About} />
       <FAQs {...faqsAbout} />
-      <Contact {...contactAbout} />
+      <Contact {...contactAbout} /> */}
+      ше ніц нема
     </>
   );
 };

@@ -4,11 +4,10 @@ import { HeroProps } from '~/shared/types';
 
 // Hero data on Contact page *******************
 export const heroContact: HeroProps = {
-  title: 'Get in touch with us',
+  title: 'Зв`язатися з нами',
   subtitle: (
     <>
-      <span className="hidden md:inline">{`Thank you for considering us for your project! We're excited to hear from you.`}</span>{' '}
-      {`Our team can assist you in building your dream website.`}
+      <span className="hidden md:inline">{`Пропозиції `}</span> {`та скарги`}
     </>
   ),
   tagline: 'Demo Contact Page',
@@ -19,13 +18,9 @@ export const contact2Contact: ContactProps = {
   id: 'contactTwo-on-contact',
   hasBackground: true,
   header: {
-    title: 'Contact us',
-    subtitle: (
-      <>
-        Please take a moment to fill out this form.{' '}
-        <span className="hidden md:inline">{`So we can better understand your needs and get the process started smoothly.`}</span>
-      </>
-    ),
+    title: 'Звязатися з нами',
+    subtitle: 'Це можна зробити просто і легко',
+    tagline: 'Contact',
   },
   items: [
     {
@@ -45,66 +40,29 @@ export const contact2Contact: ContactProps = {
     },
   ],
   form: {
-    title: 'Ready to Get Started?',
+    title: 'Заповніть форму для запитання',
     inputs: [
       {
         type: 'text',
-        label: 'First name',
         name: 'name',
         autocomplete: 'off',
-        placeholder: 'First name',
-      },
-      {
-        type: 'text',
-        label: 'Last name',
-        name: 'lastName',
-        autocomplete: 'off',
-        placeholder: 'Last name',
+        placeholder: 'Ваше імя',
       },
       {
         type: 'email',
-        label: 'Email address',
         name: 'email',
         autocomplete: 'on',
-        placeholder: 'Email address',
+        placeholder: 'Електронна пошта',
       },
     ],
-    radioBtns: {
-      label: 'What is the reason for your contact?',
-      radios: [
-        {
-          label: 'General inquiries',
-        },
-        {
-          label: 'Technical help',
-        },
-        {
-          label: 'Claims',
-        },
-        {
-          label: 'Others',
-        },
-      ],
-    },
     textarea: {
       cols: 30,
       rows: 5,
-      label: 'How can we help you?',
       name: 'textarea',
-      placeholder: 'Write your message...',
+      placeholder: 'Опишіть ваше запитання',
     },
-    checkboxes: [
-      {
-        label: 'Have you read our privacy policy?',
-        value: '',
-      },
-      {
-        label: 'Do you want to receive monthly updates by email?',
-        value: '',
-      },
-    ],
     btn: {
-      title: 'Send Message',
+      title: 'Надіслати',
       type: 'submit',
     },
   },

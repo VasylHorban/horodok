@@ -14,7 +14,6 @@ const Page = () => {
     <>
       <Hero {...heroContact} />
       <Contact2 {...contact2Contact} />
-      <Features2 {...features2Contact} />
     </>
   );
 };
