@@ -8,7 +8,7 @@ import {
   TeamProps,
   TestimonialsProps,
 } from '~/shared/types';
-import hero2Img from '~/assets/images/hero2.jpg';
+import hero2Img from '~/assets/images/hero2.png';
 import {
   IconAdjustments,
   IconAward,
@@ -38,22 +38,12 @@ import {
 
 // Hero2 data on About page *******************
 export const hero2About: HeroProps = {
-  title: 'Great companies are made by great people',
+  title: 'Народна Думка: Голос української громади',
   subtitle:
-    'Vivamus venenatis, lectus a pellentesque placerat, felis tellus ultrices eros, et aliquam sapien nibh sed sem. Fusce ut ante eget purus viverra malesuada. Morbi eget mi maximus, ultricies urna eget, tristique lorem. Fusce cursus venenatis quam, a blandit lectus vulputate id. Praesent id interdum orci, vitae condimentum dui.',
-  tagline: 'About Us Demo Page',
-  callToAction: {
-    text: 'View jobs',
-    href: 'https://www.linkedin.com/',
-    targetBlank: true,
-  },
-  callToAction2: {
-    text: 'Contact us',
-    href: '/contact',
-  },
+    'Народна Думка — це незалежне медіа, що висвітлює найактуальніші події з усієї України. Ми прагнемо бути платформою для висловлення думок і позицій кожного українця, сприяючи відкритому діалогу та громадянській активності.',
   image: {
     src: hero2Img,
-    alt: 'Hero TailNext',
+    alt: 'Народна Думка',
   },
 };
 
@@ -86,10 +76,9 @@ export const featuresFourAbout: FeaturesProps = {
   id: 'features-four-on-about',
   hasBackground: false,
   header: {
-    title: 'Our mission',
+    title: 'Наша місія',
     subtitle:
-      'Quisque laoreet nisi et lectus consectetur, at placerat libero dictum. Donec sed hendrerit turpis. Nunc vel nibh blandit, hendrerit turpis non, mattis magna. Duis feugiat dui mi, eget iaculis ligula gravida congue. Nam quis mauris id eros imperdiet imperdiet. In et dolor non nisi vestibulum rhoncus nec eget dolor.',
-    tagline: 'Mission and Values',
+      'Народна Думка — це платформа, що об’єднує українців заради спільної мети: розвитку суспільства через чесну та об’єктивну інформацію. Ми прагнемо донести голос громади та сприяти змінам на краще.',
   },
 };
 
@@ -98,42 +87,43 @@ export const featuresFourAboutTwo: FeaturesProps = {
   id: 'features-four-on-about-two',
   hasBackground: false,
   header: {
-    title: 'Our values',
-    subtitle: 'Etiam tellus tortor, mattis id mauris et, lobortis ullamcorper nunc.',
+    title: 'Наші цінності',
+    subtitle: 'Наші цінності відображають основні принципи, які ми сповідуємо у нашій роботі та взаємодії з громадою.',
   },
   isAfterContent: true,
   columns: 2,
   items: [
     {
-      title: 'Customer-centricity',
-      description: 'Nullam non sodales massa. Ut justo neque, elementum et vehicula vel, pellentesque non orci.',
+      title: 'Прозорість і чесність',
+      description: 'Ми завжди дотримуємося етичних стандартів, забезпечуючи точність і правдивість інформації.',
       icon: IconUser,
     },
     {
-      title: 'Innovation and adaptability',
+      title: 'Інновації та адаптивність',
       description:
-        'Etiam ornare, purus nec venenatis porttitor, velit leo convallis dui, at porttitor nibh tortor quis velit.',
+        'Ми постійно впроваджуємо нові підходи та технології, щоб покращити роботу і бути ближчими до нашої аудиторії.',
       icon: IconBulb,
     },
     {
-      title: 'Quality assurance',
-      description: 'Morbi sit amet arcu vitae metus molestie auctor sit amet in risus. Sed vel lacinia purus.',
+      title: 'Якість та надійність',
+      description:
+        'Наша робота базується на високих стандартах якості, ми гарантуємо достовірність і надійність наших матеріалів.',
       icon: IconThumbUp,
     },
     {
-      title: 'Accessibility and customization',
-      description: 'Phasellus id cursus urna. Nullam feugiat tellus sed euismod venenatis.',
+      title: 'Доступність і індивідуалізація',
+      description: 'Ми прагнемо зробити інформацію доступною для всіх та враховуємо потреби кожного користувача.',
       icon: IconAdjustments,
     },
     {
-      title: 'Collaboration and partnership',
+      title: 'Співпраця та партнерство',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis.',
+        'Ми будуємо міцні стосунки з нашими партнерами та аудиторією, ґрунтуючись на довірі та спільних цінностях.',
       icon: IconHeartHandshake,
     },
     {
-      title: 'Ethical and responsible design',
-      description: 'Maecenas urna augue, commodo vitae lectus euismod, tempor aliquam arcu.',
+      title: 'Етичність та відповідальність',
+      description: 'Ми відповідально ставимося до впливу нашої діяльності на суспільство та довкілля.',
       icon: IconHomeEco,
     },
   ],
