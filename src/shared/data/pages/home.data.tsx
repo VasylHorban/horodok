@@ -41,7 +41,7 @@ import gasImg from '~/assets/images/gas.jpg';
 export const heroHome: HeroProps = {
   title: (
     <>
-      Народна думка - <span className="hidden md:inline"> це новини твого міста</span>
+      Новини <span className="hidden md:inline">новини твого міста</span>
     </>
   ),
   subtitle: <></>,
