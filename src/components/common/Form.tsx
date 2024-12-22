@@ -4,9 +4,6 @@ import { FormEvent, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FormProps } from '../../shared/types';
 
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
-
 const Form = ({
   title,
   description,
@@ -47,46 +44,39 @@ const Form = ({
   const changeCheckboxHandler = (index: number) => {
     setCheckedState((prevValues) => {
       const newValues = [...(prevValues as boolean[])];
-      newValues.map(() => {
-        newValues[index] = !checkedState[index];
-      });
+      newValues[index] = !checkedState[index];
       return newValues;
     });
   };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
     const formValues = Object.fromEntries(formData.entries());
 
-    // Format the message for Telegram
-    const message = `
-      New Form Submission:
-      ${Object.entries(formValues)
-        .map(([key, value]) => `${key}: ${value}`)
-        .join('\n')}
-    `;
-
     try {
-      // Send the message to Telegram
-      await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      const response = await fetch('/api/bot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          // chat_id: TELEGRAM_CHAT_ID,
-          chat_id: '+wbnQxQGuKfE2MTcy',
-          text: message,
-        }),
+        body: JSON.stringify(formValues),
       });
 
-      alert('Message sent to Telegram channel!');
+      if (response.ok) {
+        alert('Message sent to Telegram!');
+      } else {
+        const errorData = await response.json();
+        console.error('Error from server:', errorData);
+        alert('Failed to send message.');
+      }
     } catch (error) {
-      console.error('Error sending message to Telegram:', error);
+      console.error('Error sending message:', error);
       alert('Failed to send message.');
     }
   };
+
   return (
     <form id="contactForm" onSubmit={handleSubmit} className={twMerge('', containerClass)}>
       {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
@@ -180,7 +170,7 @@ const Form = ({
         <div
           className={`${btnPosition === 'left' ? 'text-left' : btnPosition === 'right' ? 'text-right' : 'text-center'}`}
         >
-          <button type={btn.type || 'button'} className="btn btn-primary sm:mb-0">
+          <button type="submit" className="btn btn-primary sm:mb-0">
             {btn.title}
           </button>
         </div>
