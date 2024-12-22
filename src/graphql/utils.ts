@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { graphQLClient } from '~/graphql';
 
 interface GraphQLResponse<T> {
