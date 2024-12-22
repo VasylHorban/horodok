@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -30,7 +31,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/(post)/post/page.tsx",
-    "app/(post)/[id]/page.tsx"
+    "app/(post)/[id]/page.tsx",
+    "src/graphql/client.js"
   ],
   "exclude": ["node_modules"]
 }
