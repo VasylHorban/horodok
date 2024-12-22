@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
-import type { TablerIcon } from "@tabler/icons-react"
+import type { TablerIcon } from '@tabler/icons-react';
 
 type Widget = {
   id?: string;
@@ -279,7 +279,7 @@ type FeaturesProps = Widget & {
 
 type ContentProps = Widget & {
   header?: Header;
-  content?: string;
+  content?: any;
   items?: Array<Item>;
   image?: Image;
   isReversed?: boolean;

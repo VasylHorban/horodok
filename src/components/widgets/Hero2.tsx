@@ -39,7 +39,6 @@ const Hero2 = ({ title, subtitle, tagline, callToAction, callToAction2, image }:
                   height={405}
                   sizes="(min-width: 1920px) 749px, (min-width: 1540px) 43.89vw, (min-width: 1360px) 542px, (min-width: 780px) calc(39.29vw + 16px), calc(96.52vw - 22px)"
                   loading="eager"
-                  placeholder="blur"
                   priority
                 />
               )}

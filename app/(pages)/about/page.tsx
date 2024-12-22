@@ -1,46 +1,44 @@
+import { IconAdjustments, IconBulb, IconHeartHandshake, IconHomeEco, IconThumbUp, IconUser } from '@tabler/icons-react';
 import type { Metadata } from 'next';
-import Contact from '~/components/widgets/Contact';
-
-import FAQs from '~/components/widgets/FAQs';
-import Features from '~/components/widgets/Features';
-import Features3 from '~/components/widgets/Features3';
 import Features4 from '~/components/widgets/Features4';
 import Hero2 from '~/components/widgets/Hero2';
-import Stats from '~/components/widgets/Stats';
-import Steps from '~/components/widgets/Steps';
-import Team2 from '~/components/widgets/Team2';
-import Testimonials2 from '~/components/widgets/Testimonials2';
-import {
-  contactAbout,
-  faqsAbout,
-  featuresFourAbout,
-  featuresFourAboutTwo,
-  features3About,
-  hero2About,
-  statsAbout,
-  stepsAbout,
-  testimonials2About,
-  featuresAbout,
-  teamAbout,
-} from '~/shared/data/pages/about.data';
+import { AboutStatic, fetchCollection, GET_STATIC_ABOUT_DATA } from '~/graphql';
 
 export const metadata: Metadata = {
   title: `About us`,
 };
 
-const Page = () => {
+const icons = [IconUser, IconBulb, IconThumbUp, IconAdjustments, IconHeartHandshake, IconHomeEco];
+
+const Page = async () => {
+  let aboutData: AboutStatic | undefined;
+
+  async function getContactUsData() {
+    try {
+      let res = await fetchCollection<AboutStatic>('aboutCollection', GET_STATIC_ABOUT_DATA);
+      aboutData = res[0];
+    } catch (error) {
+      console.error('Error fetching contact us data:', error);
+    }
+  }
+
+  await getContactUsData();
   return (
     <>
-      <Hero2 {...hero2About} />
-      <Features4 {...featuresFourAbout} />
-      <Features4 {...featuresFourAboutTwo} />
-      {/* <Steps {...stepsAbout} />
-      <Features3 {...features3About} />
-      <Features {...featuresAbout} />
-      <Team2 {...teamAbout} />
-      <Testimonials2 {...testimonials2About} />
-      <FAQs {...faqsAbout} />
-      <Contact {...contactAbout} /> */}
+      <Hero2
+        title={aboutData?.title}
+        subtitle={aboutData?.description}
+        image={{
+          src: aboutData?.bannerImage?.url || '',
+          alt: aboutData?.bannerImage?.title || '',
+        }}
+      />
+      <Features4 header={{ title: aboutData?.missionTitle, subtitle: aboutData?.missionDescription }} />
+      <Features4
+        hasBackground
+        header={{ title: aboutData?.valuesTitle, subtitle: aboutData?.description }}
+        items={aboutData?.valuesItemsCollection.items.map((item, i) => ({ ...item, icon: icons[i] }))}
+      />
     </>
   );
 };

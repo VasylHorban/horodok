@@ -20,7 +20,8 @@ const Features4 = ({
     hasBackground={hasBackground}
     containerClass={`${isBeforeContent ? 'md:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''}`}
   >
-    {header && <Headline header={header} titleClass="text-4xl md:text-5xl" />}
+    <div style={{ paddingTop: 20 }}>{header && <Headline header={header} titleClass="text-4xl md:text-5xl" />}</div>
+
     {isImageDisplayed && (
       <div aria-hidden="true" className="aspect-w-16 aspect-h-7">
         {image && (

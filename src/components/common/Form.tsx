@@ -1,8 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FormProps } from '../../shared/types';
+
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 const Form = ({
   title,
@@ -50,9 +53,42 @@ const Form = ({
       return newValues;
     });
   };
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
+    const formData = new FormData(event.currentTarget);
+    const formValues = Object.fromEntries(formData.entries());
+
+    // Format the message for Telegram
+    const message = `
+      New Form Submission:
+      ${Object.entries(formValues)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join('\n')}
+    `;
+
+    try {
+      // Send the message to Telegram
+      await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          // chat_id: TELEGRAM_CHAT_ID,
+          chat_id: '+wbnQxQGuKfE2MTcy',
+          text: message,
+        }),
+      });
+
+      alert('Message sent to Telegram channel!');
+    } catch (error) {
+      console.error('Error sending message to Telegram:', error);
+      alert('Failed to send message.');
+    }
+  };
   return (
-    <form id="contactForm" className={twMerge('', containerClass)}>
+    <form id="contactForm" onSubmit={handleSubmit} className={twMerge('', containerClass)}>
       {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
       {description && <p className="mb-4">{description}</p>}
       <div className="mb-6">

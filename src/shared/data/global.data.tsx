@@ -25,26 +25,12 @@ export const announcementData: AnnouncementProps = {
 export const headerData: HeaderProps = {
   links: [
     {
-      label: 'Сторінки',
-      icon: IconChevronDown,
-      links: [
-        {
-          label: 'Про нас',
-          href: '/about',
-        },
-        {
-          label: 'Звязатися з нами',
-          href: '/contact',
-        },
-      ],
-    },
-    {
       label: 'Важливі новини',
-      href: '/blog',
+      href: '/post',
     },
     {
-      label: 'Звязатися з нами',
-      href: '/contact',
+      label: 'Про нас',
+      href: '/about',
     },
   ],
   isSticky: true,
@@ -62,16 +48,16 @@ export const footerData: FooterProps = {
       title: 'Навігація',
       links: [
         {
-          label: 'Про нас',
+          label: 'Головна',
           href: '/',
         },
         {
           label: 'Важливі новини',
-          href: '/blog',
+          href: '/Post',
         },
         {
-          label: 'Контакти',
-          href: '/contact',
+          label: 'Про нас',
+          href: '/about',
         },
       ],
     },
