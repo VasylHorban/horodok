@@ -3,17 +3,10 @@ import type { Metadata } from 'next';
 import { SITE } from '~/config.js';
 
 import Hero from '~/components/widgets/Hero';
-import SocialProof from '../src/components/widgets/SocialProof';
-import Features from '~/components/widgets/Features';
+
 import Content from '~/components/widgets/Content';
-import Steps from '~/components/widgets/Steps';
-import Testimonials from '~/components/widgets/Testimonials';
-import FAQs2 from '~/components/widgets/FAQs2';
-import Pricing from '~/components/widgets/Pricing';
-import Team from '~/components/widgets/Team';
-import CallToAction2 from '~/components/widgets/CallToAction2';
 import Contact from '~/components/widgets/Contact';
-import { contactHome, contentHomeOne, contentHomeTwo, heroHome } from '~/shared/data/pages/home.data';
+import { contentHomeOne, contentHomeTwo } from '~/shared/data/pages/home.data';
 import {
   Article,
   ContactUsStatic,
@@ -67,7 +60,7 @@ export default async function Page() {
 
   async function getContactUsData() {
     try {
-      let ids = [];
+      // let ids = [];
       let bannerRes = await fetchCollection<MainBannerStatic>(
         'mainStaticCollection',
         GET_STATIC_BANNER_DATA, // Replace with your actual query
@@ -98,7 +91,6 @@ export default async function Page() {
   }
 
   await getContactUsData();
-  console.log(articles);
 
   return (
     <>
@@ -107,13 +99,11 @@ export default async function Page() {
         image={{ src: bannerData?.image.url || '', alt: bannerData?.image.title || '' }}
       />
       <Content
-        {...contentHomeOne}
         content={articles[0].description.json}
         header={{ title: bannerData?.sectionName, subtitle: bannerData?.description }}
         image={{ alt: articles[0].previewImg?.description || '', src: articles[0].previewImg?.url || '' }}
       />
       <Content
-        {...contentHomeTwo}
         content={articles[1].description.json}
         image={{ alt: articles[1].previewImg?.description || '', src: articles[1].previewImg?.url || '' }}
       />
